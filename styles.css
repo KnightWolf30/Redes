@@ -1,0 +1,127 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    color: #333; /* Default text color for better visibility */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: relative; /* Needed for the wave animation to work properly */
+    overflow: hidden;  /* Ensures the wave doesn't overflow */
+}
+
+/* Light mode */
+@media (prefers-color-scheme: light) {
+    .container {
+        background: linear-gradient(to bottom, #ff1491c6, #ffd900d0); /* Vibrant rainbow gradient start */
+    }
+
+    .profile, .social-media {
+        color: #000; /* Ensure text is black for visibility */
+    }
+
+    .container::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #ff1491c6, #FF4500, #FF8C00, #ffd900d0, #ADFF2F, #00FF7F, #00B7EB, #4169E1, #9400D3, #FF1493);
+        background-size: 400% 400%;
+        animation: waveMotion 20s ease infinite;
+        z-index: -1; /* Place behind content */
+    }
+
+    .social-icon {
+        filter: brightness(1);  /* Ensure icons are not darkened */
+    }
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+    .container {
+        background: linear-gradient(to bottom, #8B008B, #0000ff85); /* Vibrant dark rainbow gradient start */
+    }
+
+    .profile, .social-media {
+        color: #FFFFFF; /* White text for better visibility in dark mode */
+    }
+
+    .container::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #8B008B, #4B0082, #0000ff85, #40E0D0, #00FF00, #FFFF00, #FFA500, #FF0000, #8B008B);
+        background-size: 400% 400%;
+        animation: waveMotion 20s ease infinite;
+        z-index: -1; /* Place behind content */
+    }
+
+    .social-icon {
+        filter: brightness(1.2);  /* Slightly brighten icons for visibility */
+    }
+}
+
+@keyframes waveMotion {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+.profile {
+    text-align: center;
+}
+
+.profile-image {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 2px solid #333; /* Add a border for contrast if needed */
+}
+
+.social-media {
+    margin-top: 20px;
+}
+
+.social-link {
+    margin: 0 10px;
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+.social-link:hover .social-icon {
+    transform: scale(1.1);
+}
+
+.social-link:active .social-icon {
+    animation: pulse 0.3s;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1.0); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1.0); }
+}
