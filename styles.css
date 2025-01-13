@@ -34,7 +34,7 @@ body {
         height: 100%;
         background: linear-gradient(135deg, #ff1491c6, #FF4500, #FF8C00, #ffd900d0, #ADFF2F, #00FF7F, #00B7EB, #4169E1, #9400D3, #FF1493);
         background-size: 400% 400%;
-        animation: waveMotion 20s ease infinite;
+        animation: waveMotion 10s ease infinite;
         z-index: -1; /* Place behind content */
     }
 
@@ -62,7 +62,7 @@ body {
         height: 100%;
         background: linear-gradient(135deg, #8B008B, #4B0082, #0000ff85, #40E0D0, #00FF00, #FFFF00, #FFA500, #FF0000, #8B008B);
         background-size: 400% 400%;
-        animation: waveMotion 20s ease infinite;
+        animation: waveMotion 10s ease infinite;
         z-index: -1; /* Place behind content */
     }
 
