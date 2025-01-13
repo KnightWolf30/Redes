@@ -1,0 +1,121 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    color: #333; /* Default text color for better visibility */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: relative; /* Needed for the wave animation to work properly */
+    overflow: hidden;  /* Ensures the wave doesn't overflow */
+}
+
+/* Light mode */
+@media (prefers-color-scheme: light) {
+
+    .profile, .social-media {
+        color: #000; /* Ensure text is black for visibility */
+    }
+
+    .container::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #FF4500, #FF6347, #FFD700, #FF8C00, #87CEEB, #1E90FF);
+        background-size: 300% 300%;
+        animation: waveMotion 20s ease infinite;
+        z-index: -1; /* Place behind content */
+    }
+
+    .social-icon {
+        filter: brightness(1);  /* Ensure icons are not darkened */
+    }
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+    
+    .profile, .social-media {
+        color: #FFFFFF; /* White text for better visibility in dark mode */
+    }
+
+    .container::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #000033, #1E3A8A, #4169E1, #00FFFF, #4B0082, #800080);
+        background-size: 300% 300%;
+        animation: waveMotion 20s ease infinite;
+        z-index: -1; /* Place behind content */
+    }
+
+    .social-icon {
+        filter: brightness(1.2);  /* Slightly brighten icons for visibility */
+    }
+}
+
+@keyframes waveMotion {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 90% 90%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+.profile {
+    text-align: center;
+}
+
+.profile-image {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 2px solid #333; /* Add a border for contrast if needed */
+}
+
+.social-media {
+    margin-top: 20px;
+}
+
+.social-link {
+    margin: 0 10px;
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+.social-link:hover .social-icon {
+    transform: scale(1.1);
+}
+
+.social-link:active .social-icon {
+    animation: pulse 0.3s;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1.0); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1.0); }
+}
