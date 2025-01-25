@@ -35,8 +35,17 @@ body {
         z-index: -1;
     }
 
+    h2 {
+        font-size: 1.2rem; /* Cambia el tamaño de la fuente */
+        font-style: italic; /* Cambia el estilo de la fuente a itálico */
+        color: #333; /* Cambia el color del texto */
+        /* text-transform: uppercase; Transforma el texto a mayúsculas */
+        letter-spacing: 2px; /* Espacio entre letras */
+        /* font-weight: bold; Pone el texto en negritas */
+    }
+
     .social-icon {
-        filter: brightness(1.5); 
+        filter: brightness(1); 
     }
 }
 
@@ -60,8 +69,17 @@ body {
         z-index: -1;
     }
 
+    h2 {
+        font-size: 1.2rem; /* Cambia el tamaño de la fuente */
+        font-style: italic; /* Cambia el estilo de la fuente a itálico */
+        color: #FFFFFF; /* Cambia el color del texto */
+        /* text-transform: uppercase; Transforma el texto a mayúsculas */
+        letter-spacing: 2px; /* Espacio entre letras */
+        /* font-weight: bold; Pone el texto en negritas */
+    }
+
     .social-icon {
-        filter: brightness(2);
+        filter: brightness(1);
     }
 }
 
