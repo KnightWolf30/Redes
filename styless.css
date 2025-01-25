@@ -41,7 +41,7 @@ body {
         color: #333; /* Cambia el color del texto */
         /* text-transform: uppercase; Transforma el texto a mayúsculas */
         letter-spacing: 2px; /* Espacio entre letras */
-        /* font-weight: bold; Pone el texto en negritas */
+        font-weight: bold; /* Pone el texto en negritas */
     }
 
     .social-icon {
@@ -72,10 +72,10 @@ body {
     h2 {
         font-size: 1.2rem; /* Cambia el tamaño de la fuente */
         font-style: italic; /* Cambia el estilo de la fuente a itálico */
-        color: #FFFFFF; /* Cambia el color del texto */
+        color: #d6cccc; /* Cambia el color del texto */
         /* text-transform: uppercase; Transforma el texto a mayúsculas */
         letter-spacing: 2px; /* Espacio entre letras */
-        /* font-weight: bold; Pone el texto en negritas */
+        font-weight: bold; /* Pone el texto en negritas */
     }
 
     .social-icon {
